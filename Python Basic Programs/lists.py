@@ -39,6 +39,3 @@ for num in m:
 
 print(maximum, minimum)
 
-
-''' 3) Remove duplicate elements from a list to create a new list with unique element.'''
-
