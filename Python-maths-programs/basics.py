@@ -130,7 +130,7 @@ print("Anti_diagonal Trace: ", trace)'''
 
 # Write a Python program to print an identity matrix of size n
 
-n = int(input("Give size of a matrix: "))
+'''n = int(input("Give size of a matrix: "))
 
 for i in range(n):
     for j in range(n):
@@ -138,5 +138,64 @@ for i in range(n):
             print(1, end=(" "))
         else:
             print(0, end=(" "))
-    print()
+    print()'''
+
+
+# Python program to check whether a given square matrix is symmetric or not.
+
+'''def is_symmetric(matrix):
+    row = len(matrix)
+    for i in range(row):
+        for j in range(row):
+            if matrix[i][j] != matrix[j][i]:
+                return False
+    return True
+    
+matrix = [[1, 2, 3],
+          [2, 4, 5],
+          [3, 5, 6]]
+
+if is_symmetric(matrix):
+    print("The matrix is Symmetric.")
+else:
+    print("The matrix is not Symmetric.")'''
+
+
+# Python program to check whether a given square matrix is an upper triangular matrix or not.
+
+'''def upper_triangle(matrix):
+    row = len(matrix)
+    for i in range(row):
+        for j in range(row):
+            if i > j and matrix[i][j] != 0:
+                return False
+    return True
+            
+matrix = [[1, 0, 0],
+          [0, 4, 5],
+          [0, 0, 6]]
+
+if upper_triangle(matrix):
+    print("Given matrix is Upper triangle matrix.")
+else:
+    print("Given matrix is not a Upper triangle matrix.")'''
+
+
+# Python program to check whether a given square matrix is a lower triangular matrix or not.
+
+n = [[1, 0, 0],
+     [2, 3, 0],
+     [4, 5, 6]]
+
+n = len(n)
+matrix = True
+
+for i in range(n):
+    for j in range(n):
+        if i < j and n[i][j] != 0:
+            print(False)
+        else:
+            print(True)
+
+            
 

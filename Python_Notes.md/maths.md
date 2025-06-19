@@ -106,3 +106,10 @@ Multiplicative Identity
 | List on one line  | Inside loop with `end=" "` |
 | Pattern/Triangle  | Outside inner loop ✅       |
 | One item per line | Inside loop                |
+
+
+# Symmetric Matrix
+A symmetric matrix is a square matrix that is equal to its transpose. In other words, a matrix 
+A is symmetric if: A = A^T. This means Aij = Aji
+​
+

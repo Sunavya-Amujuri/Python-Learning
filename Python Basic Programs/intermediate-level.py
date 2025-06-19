@@ -32,10 +32,10 @@ print("New list: ", new_l)'''
 
 #ordered list of numbers use this
 
-l = [1,2,3,3,5,4,2,7,1]
+'''l = [1,2,3,3,5,4,2,7,1]
 
 new_l = list(set(l))
-print("Original list: ", new_l)
+print("Original list: ", new_l)'''
 
 
 

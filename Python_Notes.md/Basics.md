@@ -186,3 +186,65 @@ There's no need to continue checking other values of i, because we've already pr
 | Loop control         | Manual (`i += 1`)  | Automatic via `range()` |
 
 
+## Functions
+A function is a reusable block of code that performs a specific task.
+Instead of writing the same code again and again, we can write it once inside a function and call it whenever needed.
+
+| Type                       | Example                          |
+| -------------------------- | -------------------------------- |
+| **Built-in Functions**     | `len()`, `print()`, `type()`     |
+| **User-defined Functions** | Functions you create using `def` |
+
+Parameter → Variable listed in function definition
+(like a, b in def add(a, b))
+
+Argument → Actual value passed when calling the function
+(like 5, 3 in add(5, 3))
+
+# Return Statement:
+The return keyword is used to send a result back to the caller.
+
+keyword arguments and positional arguments are ways to pass values to functions.
+
+# Positional Arguments
+- The arguments are assigned based on their position in the function call.
+- The order matters.
+# Keyword Arguments
+- Arguments are assigned based on the parameter's name.
+- The order doesn't matter, since you specify which parameter you're assigning.
+
+# Variable Scope
+- The scope of a variable defines where in the code the variable can be accessed or modified.
+- Variables can have local scope (only within a function), or global scope (accessible throughout the program).
+# Global Scope
+- Variables declared outside of functions.
+- Can be accessed or modified from anywhere in the code, including inside functions (using the global keyword if you want to modify the global variable).
+
+# Lambda Functions
+- Lambda functions, also called anonymous functions, are small, one-line functions that are defined without a formal def statement.
+- They are useful for short, simple operations where defining a full function might be unnecessary.
+ ## lambda arguments: expression
+
+# Understanding map() and list():
+- map() itself does not return a list; it returns a map object, which is an iterator.
+- To see all the results at once, you typically convert this iterator into a list (or another collection type) using list()
+- When you need a quick, throwaway function.
+Often used with functions like map(), filter(), sorted(), etc.
+
+## Why use *args and **kwargs?
+1. Handling an unknown number of arguments
+Sometimes, you don't know in advance how many arguments your function will receive.
+For example, summing any number of values or passing a flexible set of options.
+2. Creating highly flexible functions
+Functions using *args and **kwargs can accept multiple optional parameters.
+Useful for functions with default behaviors, customizable options, or plugins.
+3. Forwarding arguments
+When inheriting or wrapping functions, you can forward additional arguments dynamically.
+This is common in decorators or wrapper functions.
+## Simplified analogy:
+Using fixed arguments: like going shopping with a specific list.
+Using *args and **kwargs: like shopping with a flexible shopping list that can change.
+
+# Additional_info: 
+- Additional_info is a dictionary containing extra keyword arguments passed to the function.
+- The name helps clarify what kind of data or purpose the arguments serve.

@@ -100,10 +100,19 @@ print("Compound Interest: ", CI)'''
 
 ## Multiplication table generator
 
-num = int(input("Give a number: "))
+'''num = int(input("Give a number: "))
 
 for i in range(1,11):
-    print(f"{num} x {i} = {num*i}")
+    print(f"{num} x {i} = {num*i}")'''
+
+
+n = int(input("Enter how many Fibonacci numbers you want: "))
+
+a, b = 0, 1
+print("Fibonacci Series:")
+for _ in range(n):
+    print(a, end=" ")
+    a, b = b, a + b
    
 
 
