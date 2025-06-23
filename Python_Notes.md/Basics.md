@@ -185,6 +185,11 @@ There's no need to continue checking other values of i, because we've already pr
 | Need to declare `i`? | ✅ Yes            | ❌ No (Python handles)  |
 | Loop control         | Manual (`i += 1`)  | Automatic via `range()` |
 
+| Type            | Used to Add         | Example Code                          |
+| ----------------| ------------------- | ------------------------------------- |
+| `list` a = []   | `.append(item)`     | `my_list.append(5)`                   |
+| `dict` freq = {}| `+= 1` / assignment | `freq[char] += 1` or `freq[char] = 1` |
+
 
 ## Functions
 A function is a reusable block of code that performs a specific task.
@@ -248,3 +253,85 @@ Using *args and **kwargs: like shopping with a flexible shopping list that can c
 # Additional_info: 
 - Additional_info is a dictionary containing extra keyword arguments passed to the function.
 - The name helps clarify what kind of data or purpose the arguments serve.
+
+# Armstrong Numbers
+- An Armstrong number is a number that is equal to the sum of its own digits each raised to the power of the number of digits.
+
+# Generator Expression
+- A generator expression is a short, memory-efficient way to create iterators — similar to list comprehensions, but without creating the entire list in memory.
+## (expression for item in iterable if condition)
+
+| Feature                | `.sort()`                       | `sorted()`                           |  
+  
+| Method or Function     | List method                     | Built-in function                    |  
+| Modifies original list | Yes                             | No                                   |  
+| Returns                | `None`                          | New sorted list                      |  
+| Use case               | When you want to sort a list in place | When you need a sorted copy of any iterable |  
+
+# Note:
+- float('-inf') is the most straightforward way to represent the smallest value and is widely used.
+- Alternative: Use None for a more explicit "not set" indicator.
+- Both methods work, but using float('-inf') is common for numeric comparisons.
+
+- ✔ If second != -inf,
+→ it means we found a real second-largest number.
+
+❌ If second == -inf,
+→ it means we never updated second from -inf, so:
+
+Either all numbers were the same, or There was only one unique number.
+
+## built-in modules and features that go beyond basic data types like list, set, tuple, and dict.
+
+# 1) Collections
+- collections is a built-in Python module that provides specialized data types beyond the basic list, dict, set, and tuple.
+
+- These data types help you write cleaner, faster, and more efficient programs.
+
+| Name          | Description                                               |
+| ------------- | --------------------------------------------------------- |
+| `Counter`     | Counts frequency of elements (like characters, words)     |
+| `defaultdict` | Dictionary with default values                            |
+| `OrderedDict` | Keeps dictionary items in the order they were added       |
+| `deque`       | Double-ended queue (fast appending/removing on both ends) |
+| `namedtuple`  | Tuple with named fields (like an object with attributes)  |
+
+# 2) Heapq
+- Heapq is a Python module used to implement the heap queue algorithm (a.k.a. priority queue).
+It lets you work with a list like a min-heap — where the smallest element is always at the top.
+
+- A heap is a special tree-based data structure that satisfies the heap property:
+
+Min-Heap: parent node ≤ children → smallest element is at the top
+
+Max-Heap: parent node ≥ children → largest element is at the top (Python doesn’t support it directly, but we can trick it)
+
+Python’s heapq only supports min-heaps by default.
+
+| Function                  | What it does                                |
+| ------------------------- | ------------------------------------------- |
+| `heapify(list)`           | Converts a normal list into a min-heap      |
+| `heappush(heap, item)`    | Adds an item to the heap and reorders       |
+| `heappop(heap)`           | Removes and returns the smallest item       |
+| `heappushpop(heap, item)` | Push and pop in one step (faster)           |
+| `heapreplace(heap, item)` | Pop and push (but slightly different logic) |
+
+
+## Note: In both factorial and Fibonacci, we manually write the stop condition in recursion (called the base case).
+
+- In factorial, we stop at n <= 1/n == 1 and return 1, because 0! and 1! are both 1 by rule.
+
+- In Fibonacci, we stop at n <= 1 and return n itself, because fibonacci(0) = 0 and fibonacci(1) = 1.
+
+
+| Feature    | List               | Set             | Tuple               |  Dictionary             |
+| ---------- | -------------------| ----------------| ------------------- |------------------------ |
+| Ordered    | ✅ Yes             | ❌ No          | ✅ Yes             |✅ Yes (Python 3.7+)     |
+| Mutable    | ✅ Yes             | ✅ Yes         | ❌ No              | ✅ Yes                  |
+| Duplicates | ✅ Allowed         | ❌ Not allowed | ✅ Yes             | ❌ Keys not duplicated   |
+| Indexed    | ✅ Yes (0-based)   | ❌ No          | ✅ Yes             | ❌ No (use keys instead) |
+| Syntax     | `[1, 2, 3]`        | `{1, 2, 3}`     | (1, 2, 3)           |`{"a": 1, "b": 2}`       |
+| Use Case   | Sequence of items  | Unique items    |Fixed groups of data |Key-value paired data    |
+
+
+

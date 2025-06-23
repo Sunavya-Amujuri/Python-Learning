@@ -183,7 +183,7 @@ else:
 
 # Python program to check whether a given square matrix is a lower triangular matrix or not.
 
-n = [[1, 0, 0],
+'''n = [[1, 0, 0],
      [2, 3, 0],
      [4, 5, 6]]
 
@@ -195,7 +195,52 @@ for i in range(n):
         if i < j and n[i][j] != 0:
             print(False)
         else:
-            print(True)
+            print(True)'''
 
             
+# Determinant of a 2*2 matrix.
+
+'''def determinant_2(matrix):
+    return matrix[0][0] * matrix[1][1] - matrix[0][1] * matrix[1][0]
+    
+matrix_2 = [[1,2],[3,4]]
+result = determinant_2(matrix_2)
+print("Determinant of a matrix: ", result)'''
+
+
+# Determinant of a 3*3 matrix.
+
+'''def determinant_3(matrix):
+    # Using cofactor expansion
+    a = matrix[0][0]
+    b = matrix[0][1]
+    c = matrix[0][2]
+    d = matrix[1][0]
+    e = matrix[1][1]
+    f = matrix[1][2]
+    g = matrix[2][0]
+    h = matrix[2][1]
+    i = matrix[2][2]
+    return a * (e * i - f * h) - b * (d * i - f * g) + c * (d * h - e * g)
+    
+
+matrix_3 = [[1,2,3], [4,5,6], [7,8,9]]
+result = determinant_3(matrix_3)
+print("Determinant of matrix: ", result)'''
+
+
+# Check if Matrix is Singular or Non-Singular.
+
+def is_singular(matrix):
+    determinant = matrix[0][0] * matrix[1][1] - matrix[0][1] * matrix[1][0]
+    return determinant == 0
+        
+matrix = [[1,2],
+          [3,4]]
+result = is_singular(matrix)
+
+if result:
+    print("It is a singular matrix.")
+else:
+    print("It is non-singular matrix.")
 
