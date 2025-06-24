@@ -281,41 +281,6 @@ Using *args and **kwargs: like shopping with a flexible shopping list that can c
 
 Either all numbers were the same, or There was only one unique number.
 
-## built-in modules and features that go beyond basic data types like list, set, tuple, and dict.
-
-# 1) Collections
-- collections is a built-in Python module that provides specialized data types beyond the basic list, dict, set, and tuple.
-
-- These data types help you write cleaner, faster, and more efficient programs.
-
-| Name          | Description                                               |
-| ------------- | --------------------------------------------------------- |
-| `Counter`     | Counts frequency of elements (like characters, words)     |
-| `defaultdict` | Dictionary with default values                            |
-| `OrderedDict` | Keeps dictionary items in the order they were added       |
-| `deque`       | Double-ended queue (fast appending/removing on both ends) |
-| `namedtuple`  | Tuple with named fields (like an object with attributes)  |
-
-# 2) Heapq
-- Heapq is a Python module used to implement the heap queue algorithm (a.k.a. priority queue).
-It lets you work with a list like a min-heap — where the smallest element is always at the top.
-
-- A heap is a special tree-based data structure that satisfies the heap property:
-
-Min-Heap: parent node ≤ children → smallest element is at the top
-
-Max-Heap: parent node ≥ children → largest element is at the top (Python doesn’t support it directly, but we can trick it)
-
-Python’s heapq only supports min-heaps by default.
-
-| Function                  | What it does                                |
-| ------------------------- | ------------------------------------------- |
-| `heapify(list)`           | Converts a normal list into a min-heap      |
-| `heappush(heap, item)`    | Adds an item to the heap and reorders       |
-| `heappop(heap)`           | Removes and returns the smallest item       |
-| `heappushpop(heap, item)` | Push and pop in one step (faster)           |
-| `heapreplace(heap, item)` | Pop and push (but slightly different logic) |
-
 
 ## Note: In both factorial and Fibonacci, we manually write the stop condition in recursion (called the base case).
 
@@ -334,4 +299,153 @@ Python’s heapq only supports min-heaps by default.
 | Use Case   | Sequence of items  | Unique items    |Fixed groups of data |Key-value paired data    |
 
 
+# Lambda function: 
+- Lambda is used when you need a simple function for a short time.
 
+| Feature        | Lambda Function                         |
+| -------------- | --------------------------------------- |
+| Name           | Anonymous (no `def`)                    |
+| Return keyword | Not used (automatically returns)        |
+| Syntax         | `lambda args: expression`               |
+| Limitation     | Only one expression (no multiple lines) |
+| Used with      | `map()`, `filter()`, `sorted()`, etc.   |
+
+- Some built-in functions in lambda, to work efficiently on lists or sequences.
+
+
+| Function   | Purpose                           | Works with         | Example with Lambda          |
+| ---------- | --------------------------------- | -------------------| -----------------------------|
+| `map()`    | Transform each item               | List, Tuple        | `map(lambda x: x+1, nums)`   |
+| `filter()` | Keep items that satisfy condition | List, Set          | `filter(lambda x: x>5, nums)`|
+| `sorted()` | Sort items                      | List, Tuple (not Set)|`sorted(list, key=lambda x: x[1])`|
+
+# List Comprehension
+- A list comprehension is a short and cleaner way to create a new list by applying an operation or condition on an existing iterable (like list, range, etc.).
+- Instead of using a for loop, we write the entire logic in one line.
+
+| Feature  | List Comprehension                               |
+| -------- | ------------------------------------------------ |
+| Syntax   | `[expression for item in iterable if condition]` |
+| Purpose  | Short way to create lists from other iterables   |
+| Benefits | Cleaner, faster, readable                        |
+| Example  | `[x for x in range(10) if x % 2 == 0]`           |
+
+# Set Comprehension
+- Set comprehension is a compact way to create a set by applying logic to an iterable.
+
+| Feature         | **List Comprehension**                   | **Set Comprehension**                 |
+| --------------- | ---------------------------------------- | ------------------------------------- |
+| **Result Type** | List (allows duplicates, ordered)        | Set (no duplicates, unordered)        |
+| **Syntax**      | `[expression for item in iterable]`      | `{expression for item in iterable}`   |
+| **Duplicates**  | ✅ Allowed                              | ❌ Removed automatically              |
+| **Order**       | ✅ Maintains original order             | ❌ Unordered (no guaranteed order)    |
+| **Indexing**    | ✅ Yes (can use list\[0], list\[1]...)  | ❌ No indexing                        |
+| **Use Case**    | When you need a sequence, ordered data   | When you want only unique values      |
+| **Performance** | Slightly slower if you check for uniques | Faster lookup, as sets are hash-based |
+| **Mutable?**    | ✅ Yes (you can modify it later)        | ✅ Yes (you can add/remove later)     |
+
+
+| ✅ Use **List Comprehension** when: |  ✅ Use **Set Comprehension** when:           |   
+| ----------------------------------  | ---------------------------------------------- |
+| You need to **preserve order**      | You want **only unique items**                 |
+| You want to **allow duplicates**    | You **don’t care about order**                 |
+| You want to use **indexing** later  | You want to **avoid duplicates automatically** |
+
+
+# Dictionary Comprehension
+- A dictionary comprehension is a short and powerful way to create dictionaries using a single line of code.
+- It's similar to list and set comprehension, but instead of just values, you provide both:
+  1) a key
+  2) and a value
+
+- syntax : {key_expr: value_expr for item in iterable if condition}
+
+-  It is used when you want to:
+| Purpose                                                  | Example                                  |
+| -------------------------------------------------------- | ---------------------------------------- |
+| 🔹 Create a dictionary from a list or range              | Create `{x: x**2}` from numbers          |
+| 🔹 Filter and transform data while building a dictionary | Keep only even numbers as keys           |
+| 🔹 Swap keys and values in a dictionary                  | Convert `{"a": 1}` to `{1: "a"}`         |
+| 🔹 Clean or format dictionary data                       | Capitalize all values, remove empty ones |
+| 🔹 Merge, map, or manipulate items during creation       | Build dictionary with condition          |
+
+
+###  What is a Pattern in Programming?
+A pattern program is a type of code that prints shapes or sequences like:
+- * (stars)
+- Numbers (123, 321)
+- Alphabets (A, AB, ABC)
+- Shapes like triangles, squares, diamonds
+
+# These are output-based logic programs that use:
+- for loops (sometimes nested)
+- range(), print()
+- Math and string formatting
+
+🎯 Why Are Pattern Programs Important?
+Reason	                                 Explanation
+🧠 Improve logic & thinking	            You learn to break down complex visuals into code
+🧮 Master loops & conditions	        You’ll gain deep control over for, while, range()
+💼 Asked in interviews	                Often asked in Python/C/Java coding rounds
+🧪 Builds foundation for algorithms	    Recursion, matrix logic, and game logic
+🚀 Builds confidence to solve unknowns	You’ll start visualizing how code becomes output
+
+Real-World Use of Pattern Logic
+Even though we don’t print stars in real-world projects, the logic you use in patterns is used in real scenarios:
+
+🔸 1. Frontend UI & Games
+- Rendering shapes and grids
+- Snake game / tic-tac-toe / maze patterns
+
+🔸 2. Matrix/Array problems
+- Data visualization
+- Image representation in AI
+- Board games or simulations
+
+🔸 3. Data structures
+- Understanding loops inside loops (used in 2D lists, graphs, trees)
+- Designing output or reports in structured format
+
+🔸 4. Competitive coding
+- Almost all coding contests include 1–2 pattern-style problems
+- Helps you in TCS, Infosys, Wipro, Cognizant, etc.
+
+🔸 5. Recursion & Backtracking
+- Understanding symmetric, repeating, and layered structures
+- Basis for solving puzzles like Sudoku, N-Queens, etc.
+
+Final Thought: Pattern Programs = Visual Logic Building
+You're not just printing stars — you're training your mind to:
+- Visualize
+- Translate that into steps
+- And write loop logic to make it real 💻
+
+| Category                         | Estimated Patterns |
+| -------------------------------- | ------------------ |
+| ⭐ Star patterns                 | 10–12              |
+| 🔢 Number patterns               | 10–12              |
+| 🔠 Alphabet patterns             | 5–7                |
+| ⏹ Shape patterns (diamond, etc.) | 5–7                |
+| 🧠 Logical mixed patterns        | 5–6                |
+
+# ⭐ Star patterns
+
+| #  | Pattern Type                 | Example Shape              |
+| -- | ---------------------------- | -------------------------- |
+| 1  | Square of Stars              | `*****`                    |
+| 2  | Left-Aligned Triangle        | `*`, `**`, `***`           |
+| 3  | Right-Aligned Triangle       | Spaced triangle            |
+| 4  | Inverted Triangle (left)     | `****`, `***`              |
+| 5  | Inverted Triangle (right)    | Spaced inverted            |
+| 6  | Pyramid (centered)           | Symmetric rows             |
+| 7  | Inverted Pyramid             | Centered down              |
+| 8  | Diamond Shape                | Pyramid + inverted         |
+| 9  | Hollow Square                | Stars only on border       |
+| 10 | Hollow Triangle              | Stars on sides             |
+| 11 | Hollow Pyramid               | Border stars only          |
+| 12 | Half Diamond (upper + lower) | `*`, `**`, then `*`        |
+| 13 | Right Half Diamond (spaced)  | Angled half-diamond        |
+| 14 | Butterfly Pattern            | 2 halves mirrored          |
+| 15 | Hourglass Pattern            | Inverted + upright pyramid |
+| 16 | X Pattern                    | `*` crosses like an X      |
+| 17 | Plus (+) Pattern             | Cross shape with `*`       |

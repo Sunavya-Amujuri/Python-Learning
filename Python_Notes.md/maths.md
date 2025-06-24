@@ -113,3 +113,10 @@ A symmetric matrix is a square matrix that is equal to its transpose. In other w
 A is symmetric if: A = A^T. This means Aij = Aji
 ​
 
+
+
+
+
+
+
+

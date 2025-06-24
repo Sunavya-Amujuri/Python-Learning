@@ -231,7 +231,7 @@ print("Determinant of matrix: ", result)'''
 
 # Check if Matrix is Singular or Non-Singular.
 
-def is_singular(matrix):
+'''def is_singular(matrix):
     determinant = matrix[0][0] * matrix[1][1] - matrix[0][1] * matrix[1][0]
     return determinant == 0
         
@@ -242,5 +242,7 @@ result = is_singular(matrix)
 if result:
     print("It is a singular matrix.")
 else:
-    print("It is non-singular matrix.")
+    print("It is non-singular matrix.")'''
+
+
 
